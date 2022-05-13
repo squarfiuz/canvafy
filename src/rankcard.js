@@ -275,6 +275,7 @@ module.exports = class RankCard {
         }
         return this;
     }
+    
     setCustomStatus(color) {
         if (color) {
             if (/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(color)) {
@@ -288,7 +289,7 @@ module.exports = class RankCard {
         }
     }
 
-    async toCard() {
+    async build() {
         const xp_bar = Math.floor(this.current_xp.data / this.required_xp.data * 490);
 
         const canvas = createCanvas(800, 300);
