@@ -1,0 +1,34 @@
+{
+  "name": "canvafy",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "keywords": [
+    "discanvas",
+    "canvafy",
+    "discord",
+    "discord.js",
+    "canvas",
+    "rank",
+    "card",
+    "rankcard",
+    "welcomer",
+    "leaver",
+    "image",
+    "configuration",
+    "assets",
+    "v13"
+  ],
+  "scripts": {
+    "test": "node ./test/index"
+  },
+  "author": "squarfiuz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/squarfiuznath/discanvas"
+  },
+  "homepage": "https://github.com/squarfiuznath/discanvas#readme",
+  "dependencies": {
+    "canvas": "^2.9.1"
+  }
+}
