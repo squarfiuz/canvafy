@@ -63,7 +63,7 @@ color | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Referen
 Set the progressbar opacity
 PARAMETER | TYPE | DESCRIPTION | EXAMPLE
 --- | --- | --- | ---
-opacity | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | Number between 0 and 1 (0 and 1 included) | 1
+opacity | [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | Number between 0 and 1 (0 and 1 included) | 1
 
 <h2 id="set-border">.setBorder(color)</h2>
 

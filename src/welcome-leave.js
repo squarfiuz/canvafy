@@ -24,6 +24,19 @@ module.exports = class WelcomeLeave {
         this.avatar = url;
         return this;
     }
+
+    setAvatarBorder(color) {
+        if (color) {
+            if (/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(color)) {
+                this.avatar_border = color;
+                return this;
+            } else {
+                throw new Error("Invalid color for the argument in the setBorder method. You must give a hexadecimal color.")
+            }
+        } else {
+            throw new Error("You must give a hexadecimal color as the argument of setBorder method.");
+        }
+    }
     
     setBackground(type, value) {
         if (type === 'color') {
@@ -64,32 +77,8 @@ module.exports = class WelcomeLeave {
         }
     }
 
-    setAvatarBorder(color) {
-        if (color) {
-            if (/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(color)) {
-                this.avatar_border = color;
-                return this;
-            } else {
-                throw new Error("Invalid color for the argument in the setBorder method. You must give a hexadecimal color.")
-            }
-        } else {
-            throw new Error("You must give a hexadecimal color as the argument of setBorder method.");
-        }
-    }
-
-    setTitle(data, color = "#fff") {
-        this.title.data = data;
-        if (color) {
-            if (/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(color)) {
-                this.title.color = color;
-            }
-        }
-
-        return this;
-    }
-
-    setDescription(data, color = "#a7b9c5") {
-        this.description.data = data;
+    setDescription(text, color = "#a7b9c5") {
+        this.description.data = text;
         if (color) {
             if (/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(color)) {
                 this.description.color = color;
@@ -108,6 +97,17 @@ module.exports = class WelcomeLeave {
                 throw new Error("The value of the opacity of setOverlayOpacity method must be between 0 and 1 (0 and 1 included).");
             }
         }
+    }
+
+    setTitle(text, color = "#fff") {
+        this.title.data = text;
+        if (color) {
+            if (/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(color)) {
+                this.title.color = color;
+            }
+        }
+
+        return this;
     }
 
     async build() {
