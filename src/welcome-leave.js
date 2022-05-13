@@ -78,11 +78,16 @@ module.exports = class WelcomeLeave {
     }
 
     setDescription(text, color = "#a7b9c5") {
-        this.description.data = text;
-        if (color) {
-            if (/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(color)) {
-                this.description.color = color;
+        if (text) {
+            if (text.length > 80) throw new Error("The maximum size of the description is 80 characters.");
+            this.description.data = text;
+            if (color) {
+                if (/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(color)) {
+                    this.description.color = color;
+                }
             }
+        } else {
+            throw new Error("You must give a text as the first argument of setDescription method.");
         }
 
         return this;
@@ -100,11 +105,16 @@ module.exports = class WelcomeLeave {
     }
 
     setTitle(text, color = "#fff") {
-        this.title.data = text;
-        if (color) {
-            if (/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(color)) {
-                this.title.color = color;
+        if (text) {
+            if (text.length > 20) throw new Error("The maximum size of the title is 20 characters.");
+            this.title.data = text;
+            if (color) {
+                if (/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(color)) {
+                    this.title.color = color;
+                }
             }
+        } else {
+            throw new Error("You must give a text as the first argument of setDescription method.");
         }
 
         return this;

@@ -1,7 +1,7 @@
 {
   "name": "canvafy",
   "version": "1.0.0",
-  "description": "",
+  "description": "Make configurable canvas easily with Canvafy",
   "main": "index.js",
   "keywords": [
     "discanvas",
@@ -25,9 +25,9 @@
   "author": "squarfiuz",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/squarfiuznath/discanvas"
+    "url": "https://github.com/squarfiuz-wellick/canvafy"
   },
-  "homepage": "https://github.com/squarfiuznath/discanvas#readme",
+  "homepage": "https://github.com/squarfiuz-wellick/canvafy#readme",
   "dependencies": {
     "canvas": "^2.9.1"
   }
