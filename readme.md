@@ -49,6 +49,7 @@ client.on("messageCreate", async message => {
 });
 ```
 
+[Documentation](https://github.com/squarfiuz-wellick/canvafy/edit/main/docs/Rank.md)
 ![img](https://i.imgur.com/Tw6Upk2.png)
 
 ```js
@@ -73,6 +74,7 @@ client.on('guildMemberAdd', async member => {
 });
 ```
 
+[Documentation](https://github.com/squarfiuz-wellick/canvafy/edit/main/docs/WelcomeLeave.md)
 ![img](https://i.imgur.com/qiopaJc.png)
 
 ```js
@@ -98,6 +100,8 @@ client.on('guildMemberRemove', async member => {
 
 client.login('YOUR_TOKEN');
 ```
+
+[Documentation](https://github.com/squarfiuz-wellick/canvafy/edit/main/docs/WelcomeLeave.md)
 
 # Note
 This package is the continuation of discanvas package
