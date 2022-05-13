@@ -203,7 +203,7 @@ module.exports = class RankCard {
         return this;
     }
 
-    setCurrentXp(data, color = "#000") {
+    setCurrentXp(xp, color = "#000") {
         if (xp) {
             if (typeof xp === "number") {
                 this.current_xp.data = xp;
