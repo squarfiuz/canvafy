@@ -26,6 +26,9 @@ registerFont(`${__dirname}/assets/fonts/Poppins/Poppins-Bold.ttf`, {
 
 module.exports = {
   Image: {
+    affect: require("./src/affect"),
+    darkness: require("./src/darkness"),
+    greyscale: require("./src/greyscale"),
     invert: require("./src/invert")
   },
   RankCard: require("./src/rankcard"),

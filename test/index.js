@@ -1,5 +1,5 @@
 const fs = require("fs");
-const file = require("./codes/invert");
+const file = require("./codes/affect");
 
 const main = async function() {
   const image = await file.image();
