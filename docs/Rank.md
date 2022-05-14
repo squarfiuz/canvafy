@@ -2,7 +2,7 @@
 <h3>Rank card builder</h3>
 
 ```js
-new canvafy.Rankcard()
+new canvafy.Rank()
 ```
 
 <table>
@@ -38,7 +38,7 @@ new canvafy.Rankcard()
 </table>
 
 <h2 id="build">.build()</h2>
-<h3>Build the rankcard</h3>
+<h3>Build the rank card</h3>
 
 Scope: `ASYNC`
 

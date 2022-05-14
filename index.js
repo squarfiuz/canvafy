@@ -31,7 +31,7 @@ module.exports = {
     greyscale: require("./src/greyscale"),
     invert: require("./src/invert")
   },
-  RankCard: require("./src/rankcard"),
+  Rank: require("./src/rank"),
   Spotify: require("./src/spotify"),
   Util: require("./plugins/Util"),
   WelcomeLeave: require("./src/welcome-leave")

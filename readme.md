@@ -32,11 +32,13 @@ client.on("ready", () => {
   console.log(`I connect to ${client.user.tag}`)
 });
 ```
-Rank card
+
+<h2><a href="https://github.com/squarfiuz-wellick/canvafy/blob/main/docs/Rank.md">Rank</a> card</h2>
+
 ```js
 client.on("messageCreate", async message => {
-  if (message.content === "!rankcard") {
-    const rankcard = await new canvafy.RankCard()
+  if (message.content === "!rank") {
+    const rank = await new canvafy.Rank()
     .setAvatar(message.author.displayAvatarURL({ format: "png" }))
     .setBackground("image", "https://th.bing.com/th/id/R.248b992f15fb255621fa51ee0ca0cecb?rik=K8hIsVFACWQ8%2fw&pid=ImgRaw&r=0")
     .setUsername(message.author.username)
@@ -49,8 +51,8 @@ client.on("messageCreate", async message => {
 
     message.reply({
       files: [{
-        attachment: rankcard.toBuffer(),
-        name: `rankcard-${message.member.id}.png`
+        attachment: rank.toBuffer(),
+        name: `rank-${message.member.id}.png`
       }]
     });
   }
@@ -59,7 +61,8 @@ client.on("messageCreate", async message => {
 
 ![img](https://i.imgur.com/Tw6Upk2.png)
 
-Welcome card
+<h2><a href="https://github.com/squarfiuz-wellick/canvafy/blob/main/docs/WelcomeLeave.md">Welcome</a> card</h2>
+
 ```js
 client.on('guildMemberAdd', async member => {
   const welcome = await new canvafy.WelcomeLeave()
@@ -84,7 +87,8 @@ client.on('guildMemberAdd', async member => {
 
 ![img](https://i.imgur.com/qiopaJc.png)
 
-Spotify card
+<h2><a href="https://github.com/squarfiuz-wellick/canvafy/blob/main/docs/Spotify.md">Spotify</a> card</h2>
+
 ```js
 client.on("messageCreate", async message => {
   if (message.content === "!spotify") {
@@ -99,7 +103,7 @@ client.on("messageCreate", async message => {
 
     message.reply({
       files: [{
-        attachment: rankcard.toBuffer(),
+        attachment: rank.toBuffer(),
         name: `spotify-${message.member.id}.png`
       }]
     });
@@ -109,7 +113,7 @@ client.on("messageCreate", async message => {
 
 ![img](https://i.imgur.com/RY6uXqZ.png)
 
-Image > Affect
+<h2><a href="https://github.com/squarfiuz-wellick/canvafy/blob/main/docs/Image.md">Image</a> > <a href="https://github.com/squarfiuz-wellick/canvafy/blob/main/docs/Image.md#affect">Affect</a></h2>
 
 ```js
 const canvafy = require("../../index");
@@ -130,7 +134,9 @@ client.on("messageCreate", async message => {
 
 ![img](https://i.imgur.com/P6MgEGp.png)
 
-Leave card
+
+<h2><a href="https://github.com/squarfiuz-wellick/canvafy/blob/main/docs/WelcomeLeave.md">Leave</a> card</h2>
+
 ```js
 client.on('guildMemberRemove', async member => {
   const leave = await new canvafy.WelcomeLeave()

@@ -1,6 +1,6 @@
 const { createCanvas, loadImage } = require('canvas');
 
-module.exports = class RankCard {
+module.exports = class Rank {
   constructor() {
     this.avatar = "https://cdn.discordapp.com/embed/avatars/0.png";
     this.foreground = {
