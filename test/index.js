@@ -1,5 +1,5 @@
 const fs = require("fs");
-const file = require("./codes/spotify");
+const file = require("./codes/invert");
 
 const main = async function() {
   const image = await file.image();

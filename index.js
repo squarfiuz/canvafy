@@ -1,4 +1,4 @@
-const { registerFont } = require('canvas');
+const { registerFont } = require("canvas");
 
 registerFont(`${__dirname}/assets/fonts/Manrope/Manrope-Regular.ttf`, {
   family: "Manrope",
@@ -25,8 +25,11 @@ registerFont(`${__dirname}/assets/fonts/Poppins/Poppins-Bold.ttf`, {
 });
 
 module.exports = {
-  RankCard: require('./src/rankcard'),
-  Spotify: require('./src/spotify'),
-  Util: require('./plugins/Util'),
-  WelcomeLeave: require('./src/welcome-leave')
+  Image: {
+    invert: require("./src/invert")
+  },
+  RankCard: require("./src/rankcard"),
+  Spotify: require("./src/spotify"),
+  Util: require("./plugins/Util"),
+  WelcomeLeave: require("./src/welcome-leave")
 };

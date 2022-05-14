@@ -9,9 +9,10 @@ npm i canvafy
 [![NPM](https://nodei.co/npm/canvafy.png)](https://nodei.co/npm/canvafy/)
 
 # Documentation
-* [Rank](https://github.com/squarfiuz-wellick/canvafy/edit/main/docs/Rank.md)
-* [Welcome And Leave](https://github.com/squarfiuz-wellick/canvafy/edit/main/docs/WelcomeLeave.md)
-* [Spotify](https://github.com/squarfiuz-wellick/canvafy/edit/main/docs/Spotify.md)
+* [Rank](https://github.com/squarfiuz-wellick/canvafy/blob/main/docs/Rank.md)
+* [Welcome And Leave](https://github.com/squarfiuz-wellick/canvafy/blob/main/docs/WelcomeLeave.md)
+* [Spotify](https://github.com/squarfiuz-wellick/canvafy/blob/main/docs/Spotify.md)
+* [Image](https://github.com/squarfiuz-wellick/canvafy/blob/main/docs/Image.md)
 
 # Example of code
 
@@ -92,7 +93,7 @@ client.on("messageCreate", async message => {
         .setAlbum("Alan Walker Album")
         .setBackground("image", "https://th.bing.com/th/id/R.0bbabe949adc2ea6c853eddad2f38519?rik=jshX8YIYBDnF4w&pid=ImgRaw&r=0")
         .setImage("https://i.scdn.co/image/ab67616d00001e02df9a35baaa98675256b35177")
-        .setTimestamp(50000, 179000)
+        .setTimestamp(40000, 179000)
         .setTitle("Alone, Pt II")
         .build();
 

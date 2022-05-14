@@ -1,4 +1,9 @@
-# Welcome And Leave
+<h1 id="welcome-leave">Welcome And Leave</h1>
+<h3>Welcome and leave card builder</h3>
+
+```js
+new canvafy.WelcomeLeave()
+```
 
 <table>
   <thead>
@@ -23,57 +28,74 @@
 </table>
 
 <h2 id="build">.build()</h2>
+<h3>Build the welcome/leave card</h3>
 
-Build the welcome/leave card
+Scope: `ASYNC`
+
+Returns: [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<Buffer>
 
 <h2 id="set-avatar">.setAvatar(url)</h2>
+<h3>Set the user avatar</h3>
 
-Set the user avatar
 PARAMETER | TYPE | DESCRIPTION | EXEMPLE
 --- | --- | --- | ---
-url | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | URL of the avatar | https://someimage.com/avatar.png
+url | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) - [Buffer](https://developer.mozilla.org/en-US/docs/Glossary/buffer) - [Canvas.Image](https://www.tabnine.com/code/javascript/functions/canvas/loadImage) | URL of the avatar | https://someimage.com/avatar.png
+
+Returns: [WelcomeLeave](#welcome-leave)
 
 <h2 id="set-avatar-border">.setAvatarBorder(color)</h2>
+<h3>Set the avatar's border color</h3>
 
-Set the avatar's border color
 PARAMETER | TYPE | DESCRIPTION | EXAMPLE
 --- | --- | --- | ---
 color | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | Hexadecimal color | #2a2e35
 
-<h2 id="set-background">.setBackground(type, value)</h2>
+Returns: [WelcomeLeave](#welcome-leave)
 
-Set the background color/image
+<h2 id="set-background">.setBackground(type, value)</h2>
+<h3>Set the background color/image</h3>
+
 PARAMETER | TYPE | DESCRIPTION | EXAMPLE
 --- | --- | --- | ---
 type | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | Type between 'color' and 'background | background
-value | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | Background URL or hexadecimal color | https://someimage.com/background.png
+value | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) - [Buffer](https://developer.mozilla.org/en-US/docs/Glossary/buffer) - [Canvas.Image](https://www.tabnine.com/code/javascript/functions/canvas/loadImage) | Background or hexadecimal color | https://someimage.com/background.png/#ff5555
+
+Returns: [WelcomeLeave](#welcome-leave)
 
 <h2 id="set-border">.setBorder(color)</h2>
+<h3>Set the border color</h3>
 
-Set the border color
 PARAMETER | TYPE | DESCRIPTION | EXAMPLE
 --- | --- | --- | ---
 color | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | Hexadecimal color | #2a2e35
 
-<h2 id="set-description">.setDescription(text, [color])</h2>
+Returns: [WelcomeLeave](#welcome-leave)
 
-Set the card's description
+<h2 id="set-description">.setDescription(text, [color])</h2>
+<h3>Set the card's description</h3>
+
 PARAMETER | TYPE | DESCRIPTION | EXAMPLE
 --- | --- | --- | ---
 text | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | Description of the card | Welcome to you!
 color | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | Hexadecimal color | #a7b9c5
 
-<h2 id="set-overlay-opacity">.setOverlayOpacity(opacity)</h2>
+Returns: [WelcomeLeave](#welcome-leave)
 
-Set the card's description
+<h2 id="set-overlay-opacity">.setOverlayOpacity(opacity)</h2>
+<h3>Set the card's description</h3>
+
 PARAMETER | TYPE | DESCRIPTION | EXAMPLE
 --- | --- | --- | ---
 opacity | [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | Number between 0 and 1 (0 and 1 included) | 0
 
-<h2 id="set-title">.setTitle(text, [color])</h2>
+Returns: [WelcomeLeave](#welcome-leave)
 
-Set the card's title
+<h2 id="set-title">.setTitle(text, [color])</h2>
+<h3>Set the card's title</h3>
+
 PARAMETER | TYPE | DESCRIPTION | EXAMPLE
 --- | --- | --- | ---
 text | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | Title of the card | Welcome
 color | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | Hexadecimal color | #fff
+
+Returns: [WelcomeLeave](#welcome-leave)
