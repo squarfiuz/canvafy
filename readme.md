@@ -128,6 +128,8 @@ client.on("messageCreate", async message => {
 });
 ```
 
+![img](https://i.imgur.com/P6MgEGp.png)
+
 Leave card
 ```js
 client.on('guildMemberRemove', async member => {
