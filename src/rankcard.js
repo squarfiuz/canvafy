@@ -53,8 +53,8 @@ module.exports = class RankCard {
     this.border = null;
   }
 
-  setAvatar(url) {
-    this.avatar = url;
+  setAvatar(image) {
+    this.avatar = image;
     return this;
   }
 

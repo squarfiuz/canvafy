@@ -1,6 +1,6 @@
 {
   "name": "canvafy",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Make configurable canvas easily with Canvafy",
   "main": "index.js",
   "keywords": [

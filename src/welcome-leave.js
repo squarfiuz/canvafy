@@ -20,8 +20,8 @@ module.exports = class WelcomeLeave {
     this.avatar_border = "#2a2e35";
   }
 
-  setAvatar(url) {
-    this.avatar = url;
+  setAvatar(image) {
+    this.avatar = image;
     return this;
   }
 

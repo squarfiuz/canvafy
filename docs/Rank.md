@@ -44,12 +44,12 @@ Scope: `ASYNC`
 
 Returns: [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)\<Buffer>
 
-<h2 id="set-avatar">.setAvatar(url)</h2>
+<h2 id="set-avatar">.setAvatar(image)</h2>
 <h3>Set the user avatar</h3>
 
 PARAMETER | TYPE | DESCRIPTION | EXEMPLE
 --- | --- | --- | ---
-url | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) - [Buffer](https://developer.mozilla.org/en-US/docs/Glossary/buffer) - [Canvas.Image](https://www.tabnine.com/code/javascript/functions/canvas/loadImage) | URL of the avatar | https://someimage.com/avatar.png
+image | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) - [Buffer](https://developer.mozilla.org/en-US/docs/Glossary/buffer) - [Canvas.Image](https://www.tabnine.com/code/javascript/functions/canvas/loadImage) | Avatar image | https://someimage.com/avatar.png
 
 Returns: [Rank](#rank)
 
@@ -59,7 +59,7 @@ Returns: [Rank](#rank)
 PARAMETER | TYPE | DESCRIPTION | EXAMPLE
 --- | --- | --- | ---
 type | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | Type between 'color' and 'background | background
-value | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) - [Buffer](https://developer.mozilla.org/en-US/docs/Glossary/buffer) - [Canvas.Image](https://www.tabnine.com/code/javascript/functions/canvas/loadImage) | Background or hexadecimal color | https://someimage.com/background.png/#ff5555
+value | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) - [Buffer](https://developer.mozilla.org/en-US/docs/Glossary/buffer) - [Canvas.Image](https://www.tabnine.com/code/javascript/functions/canvas/loadImage) | Background or hexadecimal color | https://someimage.com/background.png / #ff5555
 
 Returns: [Rank](#rank)
 
