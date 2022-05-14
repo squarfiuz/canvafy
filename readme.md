@@ -11,6 +11,7 @@ npm i canvafy
 # Documentation
 * [Rank](https://github.com/squarfiuz-wellick/canvafy/edit/main/docs/Rank.md)
 * [Welcome And Leave](https://github.com/squarfiuz-wellick/canvafy/edit/main/docs/WelcomeLeave.md)
+* [Spotify](https://github.com/squarfiuz-wellick/canvafy/edit/main/docs/Spotify.md)
 
 # Example of code
 
