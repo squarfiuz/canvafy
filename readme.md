@@ -29,7 +29,9 @@ const client = new Client({
 client.on("ready", () => {
     console.log(`I connect to ${client.user.tag}`)
 });
-
+```
+Rank card
+```js
 client.on("messageCreate", async message => {
     if (message.content === "!rankcard") {
         const rankcard = await new canvafy.RankCard()
@@ -41,7 +43,7 @@ client.on("messageCreate", async message => {
         .setLevel(1)
         .setCurrentXp(200)
         .setRequiredXp(400)
-        .build()
+        .build();
 
         message.reply({
             files: [{
@@ -55,6 +57,7 @@ client.on("messageCreate", async message => {
 
 ![img](https://i.imgur.com/Tw6Upk2.png)
 
+Welcome card
 ```js
 client.on('guildMemberAdd', async member => {
     const welcome = await new canvafy.WelcomeLeave()
@@ -65,7 +68,7 @@ client.on('guildMemberAdd', async member => {
     .setBorder("#2a2e35")
     .setAvatarBorder("#2a2e35")
     .setOverlayOpacity(0.3)
-    .build()
+    .build();
 
     member.guild.channels.cache.get("<channelId>").send({
         content: `Welcome to you ${member}!`,
@@ -79,6 +82,32 @@ client.on('guildMemberAdd', async member => {
 
 ![img](https://i.imgur.com/qiopaJc.png)
 
+Spotify card
+```js
+client.on("messageCreate", async message => {
+    if (message.content === "!spotify") {
+        const spotify = await new canvafy.Spotify()
+        .setAuthor("Alan Walker, Ava Max")
+        .setAlbum("Alan Walker Album")
+        .setBackground("image", "https://th.bing.com/th/id/R.0bbabe949adc2ea6c853eddad2f38519?rik=jshX8YIYBDnF4w&pid=ImgRaw&r=0")
+        .setImage("https://i.scdn.co/image/ab67616d00001e02df9a35baaa98675256b35177")
+        .setTimestamp(50000, 179000)
+        .setTitle("Alone, Pt II")
+        .build();
+
+        message.reply({
+            files: [{
+                attachment: rankcard.toBuffer(),
+                name: `spotify-${message.member.id}.png`
+            }]
+        });
+    }
+});
+```
+
+![img](https://i.imgur.com/RY6uXqZ.png)
+
+Leave card
 ```js
 client.on('guildMemberRemove', async member => {
     const leave = await new canvafy.WelcomeLeave()
@@ -89,7 +118,7 @@ client.on('guildMemberRemove', async member => {
     .setBorder("#2a2e35")
     .setAvatarBorder("#2a2e35")
     .setOverlayOpacity(0.3)
-    .build()
+    .build();
 
     member.guild.channels.cache.get("<channelId>").send({
         content: `Goodbye to you ${member}!`,

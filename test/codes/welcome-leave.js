@@ -10,7 +10,7 @@ module.exports = {
     .setBorder("#2a2e35")
     .setAvatarBorder("#2a2e35")
     .setOverlayOpacity(0.3)
-    .build()
+    .build();
 
     return image;
   },

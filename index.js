@@ -24,5 +24,9 @@ registerFont(`${__dirname}/assets/fonts/Poppins/Poppins-Bold.ttf`, {
   style: "normal"
 });
 
-module.exports.RankCard = require('./src/rankcard');
-module.exports.WelcomeLeave = require('./src/welcome-leave');
+module.exports = {
+  RankCard: require('./src/rankcard'),
+  Spotify: require('./src/spotify'),
+  Util: require('./plugins/Util'),
+  WelcomeLeave: require('./src/welcome-leave')
+};

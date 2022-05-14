@@ -1,5 +1,5 @@
 const fs = require("fs");
-const file = require("./codes/welcome-leave");
+const file = require("./codes/spotify");
 
 const main = async function() {
   const image = await file.image();

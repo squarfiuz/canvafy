@@ -18,8 +18,8 @@
   * [setCurrentXp](#set-current-xp)
   * [setCustomStatus](#set-custom-status)
   * [setDiscriminator](#set-discriminator)
-  * [setForgroundColor](#set-forground-color)
-  * [setForgroundOpacity](#set-forgound-opacity)
+  * [setForegroundColor](#set-foreground-color)
+  * [setForegroundOpacity](#set-foreground-opacity)
   * [setLevel](#set-level)
   * [setLevelColor](#set-level-color)
   * [setRank](#set-rank)
@@ -95,16 +95,16 @@ PARAMETER | TYPE | DESCRIPTION | EXAMPLE
 discriminator | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | Discriminator of the user | 7777
 color | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | Hexadecimal color of discriminator | #fff
 
-<h2 id="set-forground-color">.setForgroundColor(color)</h2>
+<h2 id="set-foreground-color">.setForegroundColor(color)</h2>
 
-Set the the forground color
+Set the the foreground color
 PARAMETER | TYPE | DESCRIPTION | EXAMPLE
 --- | --- | --- | ---
 color | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | Hexadecimal color | #2a2e35
 
-<h2 id="set-forground-opacity">.setForgroundOpacity(opacity)</h2>
+<h2 id="set-foreground-opacity">.setForegroundOpacity(opacity)</h2>
 
-Set the forground opacity
+Set the foreground opacity
 PARAMETER | TYPE | DESCRIPTION | EXAMPLE
 --- | --- | --- | ---
 opacity | [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | Number between 0 and 1 (0 and 1 included) | 0.8

@@ -24,7 +24,7 @@
 
 <h2 id="build">.build()</h2>
 
-Build the rankcard
+Build the welcome/leave card
 
 <h2 id="set-avatar">.setAvatar(url)</h2>
 
