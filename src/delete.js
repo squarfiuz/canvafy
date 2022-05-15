@@ -5,14 +5,14 @@ module.exports = async (template_image) => {
   try {
     image = await loadImage(template_image);
   } catch {
-    throw new Error("The image given in the argument of the affect method is not valid or you are not connected to the internet.");
+    throw new Error("The image given in the argument of the delete method is not valid or you are not connected to the internet.");
   }
-  const background = await loadImage("./assets/images/affect.png");
+  const background = await loadImage("./assets/images/delete.png");
   const canvas = await createCanvas(background.width, background.height);
   const ctx = canvas.getContext("2d");
 
   ctx.drawImage(background, 0, 0);
-  ctx.drawImage(image, 180, 383, 200, 157);
+  ctx.drawImage(image, 120, 135, 195, 195);
 
   return canvas;
 };

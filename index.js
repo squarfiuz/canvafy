@@ -27,7 +27,11 @@ registerFont(`${__dirname}/assets/fonts/Poppins/Poppins-Bold.ttf`, {
 module.exports = {
   Image: {
     affect: require("./src/affect"),
+    batslap: require("./src/batslap"),
+    beautiful: require("./src/beautiful"),
     darkness: require("./src/darkness"),
+    delete: require("./src/delete"),
+    gay: require("./src/gay"),
     greyscale: require("./src/greyscale"),
     invert: require("./src/invert")
   },
