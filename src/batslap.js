@@ -9,7 +9,7 @@ module.exports = async (template_image1, template_image2) => {
   } catch {
     throw new Error("The image given in the argument of the batslap method is not valid or you are not connected to the internet.");
   }
-  const background = await loadImage("./assets/images/batslap.png");
+  const background = await loadImage(`${__dirname}/../assets/images/batslap.png`);
   const canvas = await createCanvas(background.width, background.height);
   const ctx = canvas.getContext("2d");
 

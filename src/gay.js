@@ -7,7 +7,7 @@ module.exports = async (template_image) => {
   } catch {
     throw new Error("The image given in the argument of the gay method is not valid or you are not connected to the internet.");
   }
-  const background = await loadImage("./assets/images/gay.png");
+  const background = await loadImage(`${__dirname}/../assets/images/gay.png`);
   const canvas = await createCanvas(background.width, background.height);
   const ctx = canvas.getContext("2d");
   
