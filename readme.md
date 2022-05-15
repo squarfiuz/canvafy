@@ -103,7 +103,7 @@ client.on("messageCreate", async message => {
 
     message.reply({
       files: [{
-        attachment: rank.toBuffer(),
+        attachment: spotify.toBuffer(),
         name: `spotify-${message.member.id}.png`
       }]
     });
