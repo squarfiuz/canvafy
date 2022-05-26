@@ -26,9 +26,9 @@
   "author": "squarfiuz",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/squarfiuz-wellick/canvafy"
+    "url": "https://github.com/squarfiuz/canvafy"
   },
-  "homepage": "https://github.com/squarfiuz-wellick/canvafy#readme",
+  "homepage": "https://github.com/squarfiuz/canvafy#readme",
   "dependencies": {
     "canvas": "^2.9.1",
     "dayjs": "^1.11.2"

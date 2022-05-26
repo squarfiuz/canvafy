@@ -9,10 +9,10 @@ npm i canvafy
 [![NPM](https://nodei.co/npm/canvafy.png)](https://nodei.co/npm/canvafy/)
 
 # Documentation
-* [Rank](https://github.com/squarfiuz-wellick/canvafy/blob/main/docs/Rank.md)
-* [Welcome And Leave](https://github.com/squarfiuz-wellick/canvafy/blob/main/docs/WelcomeLeave.md)
-* [Spotify](https://github.com/squarfiuz-wellick/canvafy/blob/main/docs/Spotify.md)
-* [Image](https://github.com/squarfiuz-wellick/canvafy/blob/main/docs/Image.md)
+* [Rank](https://github.com/squarfiuz/canvafy/blob/main/docs/Rank.md)
+* [Welcome And Leave](https://github.com/squarfiuz/canvafy/blob/main/docs/WelcomeLeave.md)
+* [Spotify](https://github.com/squarfiuz/canvafy/blob/main/docs/Spotify.md)
+* [Image](https://github.com/squarfiuz/canvafy/blob/main/docs/Image.md)
 
 # Example of code
 
@@ -33,7 +33,7 @@ client.on("ready", () => {
 });
 ```
 
-<h2><a href="https://github.com/squarfiuz-wellick/canvafy/blob/main/docs/Rank.md">Rank</a> card</h2>
+<h2><a href="https://github.com/squarfiuz/canvafy/blob/main/docs/Rank.md">Rank</a> card</h2>
 
 ```js
 client.on("messageCreate", async message => {
@@ -61,7 +61,7 @@ client.on("messageCreate", async message => {
 
 ![img](https://i.imgur.com/Tw6Upk2.png)
 
-<h2><a href="https://github.com/squarfiuz-wellick/canvafy/blob/main/docs/WelcomeLeave.md">Welcome</a> card</h2>
+<h2><a href="https://github.com/squarfiuz/canvafy/blob/main/docs/WelcomeLeave.md">Welcome</a> card</h2>
 
 ```js
 client.on('guildMemberAdd', async member => {
@@ -87,7 +87,7 @@ client.on('guildMemberAdd', async member => {
 
 ![img](https://i.imgur.com/qiopaJc.png)
 
-<h2><a href="https://github.com/squarfiuz-wellick/canvafy/blob/main/docs/Spotify.md">Spotify</a> card</h2>
+<h2><a href="https://github.com/squarfiuz/canvafy/blob/main/docs/Spotify.md">Spotify</a> card</h2>
 
 ```js
 client.on("messageCreate", async message => {
@@ -113,7 +113,7 @@ client.on("messageCreate", async message => {
 
 ![img](https://i.imgur.com/RY6uXqZ.png)
 
-<h2><a href="https://github.com/squarfiuz-wellick/canvafy/blob/main/docs/Image.md">Image</a> > <a href="https://github.com/squarfiuz-wellick/canvafy/blob/main/docs/Image.md#affect">Affect</a></h2>
+<h2><a href="https://github.com/squarfiuz/canvafy/blob/main/docs/Image.md">Image</a> > <a href="https://github.com/squarfiuz/canvafy/blob/main/docs/Image.md#affect">Affect</a></h2>
 
 ```js
 const canvafy = require("../../index");
@@ -135,7 +135,7 @@ client.on("messageCreate", async message => {
 ![img](https://i.imgur.com/P6MgEGp.png)
 
 
-<h2><a href="https://github.com/squarfiuz-wellick/canvafy/blob/main/docs/WelcomeLeave.md">Leave</a> card</h2>
+<h2><a href="https://github.com/squarfiuz/canvafy/blob/main/docs/WelcomeLeave.md">Leave</a> card</h2>
 
 ```js
 client.on('guildMemberRemove', async member => {
