@@ -55,238 +55,188 @@ module.exports = class Rank {
 
   setAvatar(image) {
     this.avatar = image;
+
+    if (!image) throw new Error("The argument of setAvatar method is not an image or an URL.");
+
     return this;
   }
 
   setBackground(type, value) {
-    if (type === 'color') {
-      if (value) {
-        if (/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(value)) {
-          this.background.type = "color";
-          this.background.background = value;
-          return this;
-        } else {
-          throw new Error("Invalid color for the second argument in setBackground method. You must give a hexadecimal color.");
-        }
-      } else {
-        throw new Error("You must give a hexadecimal color as a second argument of setBackground method.");
-      }
-    } else if (type === 'image') {
-      if (value) {
-        this.background.type = "image";
-        this.background.background = value;
-        return this;
-      } else {
-        throw new Error("You must give a background URL as a second argument.");
-      }
-    } else {
-      throw new Error("The first argument of setBackground must be 'color' or 'image'.");
-    }
+    const types = ["color", "image"];
+    if (!type || typeof type !== "string") throw new Error("The first argument of setBackground method is not a string.");
+    if (!types.includes(type)) throw new Error("The first argument of setBackground is not 'color' or 'image' type.");
+    if (type === "color" && !value) throw new Error("The second argument of setBackground method is not a hexadecimal color.");
+    if (type === "image" && !value) throw new Error("The second argument of setBackground method is not an image or an URL.");
+    if (type === "color" && !/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(value)) throw new Error("The second argument of setBackground method is not a hexadecimal color.");
+
+    this.background.type = type;
+    this.background.background = value;
+
+    return this;
   }
 
   setBarColor(color) {
-    if (color) {
-      if (/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(color)) {
-        this.bar.color = color;
-        return this;
-      } else {
-        throw new Error("The argument of setBorderColor method must be a hexadecimal color.");
-      }
-    }
+    if (!color || typeof color !== "string") throw new Error("The argument of setBarColor method is not a string.");
+    if (!/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(color)) throw new Error("The argument of setBarColor method is not a hexadecimal color.");
+
+    this.bar.color = color;
+
+    return this;
   }
 
   setBarOpacity(opacity) {
-    if (opacity) {
-      if (opacity >= 0 && opacity <= 1) {
-        this.bar.opacity = opacity;
-        return this;
-      } else {
-        throw new Error("The value of the opacity of setBarOpacity method must be between 0 and 1 (0 and 1 included).");
-      }
-    }
+    if (typeof opacity !== "number") throw new Error("The argument of setBarOpacity method is not a number.");
+    if (opacity < 0 || opacity > 1) throw new Error("The argument of setBarOpacity method is not between 0 and 1 (0 and 1 included).");
+
+    this.bar.opacity = opacity;
+
+    return this;
   }
 
   setBorder(color) {
-    if (color) {
-      if (/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(color)) {
-        this.border = color;
-        return this;
-      } else {
-        throw new Error("Invalid color for the argument in the setBorder method. You must give a hexadecimal color.")
-      }
-    } else {
-      throw new Error("You must give a hexadecimal color as the argument of setBorder method.");
-    }
+    if (!color || typeof color !== "string") throw new Error("The argument of setBorder method is not a string.");
+    if (!/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(color)) throw new Error("The argument of setBorder method is not a hexadecimal color.");
+
+    this.border = color;
+
+    return this;
   }
 
   setForegroundColor(color) {
-    if (color) {
-      if (/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(color)) {
-        this.foreground.color = color;
-        return this;
-      } else {
-        throw "The argument of setForegroundColor method must be a hexadecimal color."
-      }
-    }
+    if (!color || typeof color !== "string") throw new Error("The argument of setBorder method is not a string.");
+    if (!/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(color)) throw new Error("The argument of setForegroundColor method is not a hexadecimal color.");
+
+    this.foreground.color = color;
+
+    return this;
   }
 
   setForegroundOpacity(opacity = 0.8) {
-    if (opacity) {
-      if (opacity >= 0 && opacity <= 1) {
-        this.foreground.opacity = opacity;
-        return this;
-      } else {
-        throw new Error("The value of the opacity of setForegroundOpacity method must be between 0 and 1 (0 and 1 included).");
-      }
-    }
+    if (typeof opacity !== "number") throw new Error("The argument of setForegroundOpacity method is not a number.");
+    if (opacity < 0 || opacity > 1) throw new Error("The value of the opacity of setForegroundOpacity method is not between 0 and 1 (0 and 1 included).");
+
+    this.foreground.opacity = opacity;
+
+    return this;
   }
 
   setLevel(data, text = "Level", display = true) {
-    if (data) {
-      if (typeof data === "number") {
-        this.level.data = data;
-        if (typeof text === "string") this.level.text = text;
-        if (display === false || display === true) this.level.display = display;
-        return this;
-      } else {
-        throw new Error("The first argument of setLevel method is not a number.");
-      }
-    } else {
-      throw new Error("You must give a number as the first argument of setLevel method.");
-    }
+    if (typeof data !== "number") throw new Error("The first argument of setLevel method is not a number.");
+    if (typeof text !== "string") throw new Error("The second argument of setLevel method is not a string.");
+    if (typeof display !== "boolean") throw new Error("The third argument of setLevel method is not a boolean.");
+
+    this.level.data = data;
+    this.level.text = text;
+    this.level.display = display;
+
+    return this;
   }
 
   setLevelColor(text = "#fff", number = "#fff") {
-    if (text) {
-      if (/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(text)) {
-        this.level.text_color = text;
-      }
-    }
+    if (typeof text !== "string") throw new Error("The first argument of setLevelColor method is not a string.");
+    if (typeof number !== "string") throw new Error("The second argument of setLevelColor method is not a string.");
+    if (!/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(text)) throw new Error("The first argument of setLevelColor method is not a hexadecimal color.");
+    if (!/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(number)) throw new Error("The second argument of setLevelColor method is not a hexadecimal color.");
 
-    if (number) {
-      if (/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(number)) {
-        this.level.number_color = number;
-      }
-    }
+    this.level.text_color = text;
+    this.level.number_color = number;
 
     return this;
   }
 
   setRank(data, text = "Rank", display = true) {
-    if (data) {
-      if (typeof data === "number") {
-        this.rank.data = data;
-        if (typeof text === "string") this.rank.text = text;
-        if (display === false || display === true) this.rank.display = display;
-        return this;
-      } else {
-        throw new Error("The first argument of setRank method is not a number.");
-      }
-    } else {
-      throw new Error("You must give a number as the first argument of setRank method.");
-    }
+    if (typeof data !== "number") throw new Error("The first argument of setRank method is not a number.");
+    if (typeof text !== "string") throw new Error("The second argument of setRank method is not a string.");
+    if (typeof display !== "boolean") throw new Error("The third argument of setRank method is not a boolean.");
+
+    this.rank.data = data;
+    this.rank.text = text;
+    this.rank.display = display;
+
+    return this;
   }
 
   setRankColor(text = "#fff", number = "#fff") {
-    if (text) {
-      if (/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(text)) {
-        this.rank.text_color = text;
-      }
-    }
+    if (typeof text !== "string") throw new Error("The first argument of setRankColor method is not a string.");
+    if (typeof number !== "string") throw new Error("The second argument of setRankColor method is not a string.");
+    if (!/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(text)) throw new Error("The first argument of setRankColor method is not a hexadecimal color.");
+    if (!/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(number)) throw new Error("The second argument of setRankColor method is not a hexadecimal color.");
 
-    if (number) {
-      if (/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(number)) {
-        this.rank.number_color = number;
-      }
-    }
+    this.rank.text_color = text;
+    this.rank.number_color = number;
 
     return this;
   }
 
   setCurrentXp(xp, color = "#000") {
-    if (xp) {
-      if (typeof xp === "number") {
-        this.current_xp.data = xp;
-        if (color) {
-          if (/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(color)) {
-            this.current_xp.color = color;
-          }
-        }
-        return this;
-      } else {
-        throw new Error("The first argument of setCurrentXp method is not a number.");
-      }
-    } else {
-      throw new Error("You must give a number as the first argument of setCurrentXp method.");
-    }
+    if (typeof xp !== "number") throw new Error("The first argument of setCurrentXp method is not a number.");
+    if (!color || typeof color !== "string") throw new Error("The second argument of setCurrentXp method is not a string.");
+    if (!/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(color)) throw new Error("The second argument of setCurrentXp method is not a hexadecimal color.");
+
+    this.current_xp.data = xp;
+    this.current_xp.color = color;
+
+    return this;
   }
 
   setRequiredXp(xp, color = "#000") {
-    if (xp) {
-      if (typeof xp === "number") {
-        this.required_xp.data = xp;
-        if (color) {
-          if (/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(color)) {
-            this.required_xp.color = color;
-          }
-        }
-        return this;
-      } else {
-        throw new Error("The first argument of setRequiredXp method is not a number.");
-      }
-    } else {
-      throw new Error("You must give a number as the first argument of setRequiredXp method.");
-    }
+    if (typeof xp !== "number") throw new Error("The first argument of setRequiredXp method is not a number.");
+    if (!color || typeof color !== "string") throw new Error("The second argument of setRequiredXp method is not a string.");
+    if (!/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(color)) throw new Error("The second argument of setRequiredXp method is not a hexadecimal color.");
+
+    this.required_xp.data = xp;
+    this.required_xp.color = color;
+
+    return this;
   }
 
   setUsername(username, color = "#fff") {
+    if (!username || typeof username !== "string") throw new Error("The first argument of setUsername method is not a string.");
+    if (!color || typeof color !== "string") throw new Error("The second argument of setUsername method is not a string.");
+    if (!/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(color)) throw new Error("The second argument of setUsername method is not a hexadecimal color.");
+
     this.username.data = username;
-    if (color) {
-      if (/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(color)) {
-        this.username.color = color;
-      }
-    }
+    this.username.color = color;
 
     return this;
   }
 
   setDiscriminator(discriminator, color = "#fff") {
+    if (!discriminator || typeof discriminator !== "string") throw new Error("The first argument of setDiscriminator method is not a string.");
+    if (!color || typeof color !== "string") throw new Error("The second argument of setDiscriminator method is not a string.");
+    if (!/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(color)) throw new Error("The second argument of setDiscriminator method is not a hexadecimal color.");
+
     this.discriminator.data = discriminator.slice(0, 4);
-    if (color) {
-      if (/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(color)) {
-        this.discriminator.color = color;
-      }
-    }
+    this.discriminator.color = color;
 
     return this;
   }
 
   setStatus(status) {
-    if (status === "online") {
-      this.status = "#3ba55c";
-    } else if (status === "idle") {
-      this.status = "#faa61a"
-    } else if (status === "dnd") {
-      this.status = "#ed4245";
-    } else if (status === "stream") {
-      this.status = "#593695";
-    } else if (status === "offline") {
-      this.status = "#747f8e";
-    }
+    if (!status || typeof status !== "string") throw new Error("The argument of setStatus method is not a string.");
+
+    const statutes = {
+      online: "#3ba55c",
+      idle: "#faa61a",
+      dnd: "#ed4245",
+      stream: "#593695",
+      offline: "#747f8e"
+    };
+
+    if (!statutes[status]) throw new Error("The argument of setStatus method is not a valid status.");
+
+    this.status = statutes[status];
+
     return this;
   }
 
   setCustomStatus(color) {
-    if (color) {
-      if (/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(color)) {
-        this.status = color;
-        return this;
-      } else {
-        throw new Error("Invalid color for the argument in the setCustomStatus method. You must give a hexadecimal color.")
-      }
-    } else {
-      throw new Error("You must give a hexadecimal color as a argument of setCustomStatus method.");
-    }
+    if (!color || typeof color !== "string") throw new Error("The argument of setCustomStatus method is not a string.");
+    if (!/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(color)) throw new Error("The argument of setCustomStatus method is not a hexadecimal color.");
+
+    this.status = color;
+
+    return this;
   }
 
   async build() {
