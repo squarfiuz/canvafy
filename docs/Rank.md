@@ -137,45 +137,39 @@ opacity | [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 
 Returns: [Rank](#rank)
 
-<h2 id="set-level">.setLevel(data, [text], [display])</h2>
+<h2 id="set-level">.setLevel(options)</h2>
 <h3>Set the level</h3>
 
-PARAMETER | TYPE | DESCRIPTION | EXAMPLE
+PARAMETER | TYPE | DESCRIPTION
 --- | --- | --- | ---
-data | [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | Level Number | 1
-text | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | Level text | Level
-display | [Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) | Display the text | true
+options | [LevelOptions](https://github.com/squarfiuz/canvafy/tree/main/docs/typedef/LevelOptions.md) | The options for the level
 
 Returns: [Rank](#rank)
 
-<h2 id="set-level-color">.setLevelColor(text, number)</h2>
+<h2 id="set-level-color">.setLevelColor(options)</h2>
 <h3>Set the level color</h3>
 
-PARAMETER | TYPE | DESCRIPTION | EXAMPLE
+PARAMETER | TYPE | DESCRIPTION
 --- | --- | --- | ---
-text | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | Hexadecimal color of level text | #fff
-number | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | Hexadecimal color of level number text | #fff
+options | [LevelColorOptions](https://github.com/squarfiuz/canvafy/tree/main/docs/typedef/LevelColorOptions.md) | The options for the level color
 
 Returns: [Rank](#rank)
 
-<h2 id="set-rank">.setRank(data, [text], [display])</h2>
+<h2 id="set-rank">.setRank(options)</h2>
 <h3>Set the rank</h3>
 
-PARAMETER | TYPE | DESCRIPTION | EXAMPLE
+PARAMETER | TYPE | DESCRIPTION
 --- | --- | --- | ---
-data | [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | Rank Number | 1
-text | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | Rank text | Rank
-display | [Boolean](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Boolean) | Display the text | true
+options | [RankOptions](https://github.com/squarfiuz/canvafy/tree/main/docs/typedef/RankOptions.md) | The options for the rank
 
 Returns: [Rank](#rank)
 
-<h2 id="set-rank-color">.setRankColor(text, number)</h2>
+<h2 id="set-rank-color">.setRankColor(options)</h2>
 <h3>Set the rank color</h3>
 
-PARAMETER | TYPE | DESCRIPTION | EXAMPLE
+PARAMETER | TYPE | DESCRIPTION
 --- | --- | --- | ---
-text | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | Hexadecimal color of rank text | #fff
-number | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | Hexadecimal color of rank number text | #fff
+options | [RankColorOptions](https://github.com/squarfiuz/canvafy/tree/main/docs/typedef/RankColorOptions.md) | The options for the rank color
 
 Returns: [Rank](#rank)
 

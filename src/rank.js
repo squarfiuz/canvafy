@@ -120,7 +120,7 @@ module.exports = class Rank {
     return this;
   }
 
-  setLevel(data, text = "Level", display = true) {
+  setLevel({ data, text = "Level", display = true }) {
     if (typeof data !== "number") throw new Error("The first argument of setLevel method is not a number.");
     if (typeof text !== "string") throw new Error("The second argument of setLevel method is not a string.");
     if (typeof display !== "boolean") throw new Error("The third argument of setLevel method is not a boolean.");
@@ -132,7 +132,7 @@ module.exports = class Rank {
     return this;
   }
 
-  setLevelColor(text = "#fff", number = "#fff") {
+  setLevelColor({ text = "#fff", number = "#fff" }) {
     if (typeof text !== "string") throw new Error("The first argument of setLevelColor method is not a string.");
     if (typeof number !== "string") throw new Error("The second argument of setLevelColor method is not a string.");
     if (!/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(text)) throw new Error("The first argument of setLevelColor method is not a hexadecimal color.");
@@ -144,7 +144,7 @@ module.exports = class Rank {
     return this;
   }
 
-  setRank(data, text = "Rank", display = true) {
+  setRank({ data, text = "Rank", display = true }) {
     if (typeof data !== "number") throw new Error("The first argument of setRank method is not a number.");
     if (typeof text !== "string") throw new Error("The second argument of setRank method is not a string.");
     if (typeof display !== "boolean") throw new Error("The third argument of setRank method is not a boolean.");
@@ -156,7 +156,7 @@ module.exports = class Rank {
     return this;
   }
 
-  setRankColor(text = "#fff", number = "#fff") {
+  setRankColor({ text = "#fff", number = "#fff" }) {
     if (typeof text !== "string") throw new Error("The first argument of setRankColor method is not a string.");
     if (typeof number !== "string") throw new Error("The second argument of setRankColor method is not a string.");
     if (!/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(text)) throw new Error("The first argument of setRankColor method is not a hexadecimal color.");
@@ -284,14 +284,18 @@ module.exports = class Rank {
     ctx.fillStyle = this.discriminator.color;
     ctx.fillText(`#${this.discriminator.data}`, ctx.measureText(username).width + 35 + 240, 128);
 
-    ctx.textAlign = "start";
-    ctx.font = `bold ${this.rank.size}px Manrope`;
-    ctx.fillStyle = this.rank.text_color;
-    ctx.fillText(`${this.rank.text}: ${this.rank.data}`, 240, 65);
+    if (this.rank.display === true) {
+      ctx.textAlign = "start";
+      ctx.font = `bold ${this.rank.size}px Manrope`;
+      ctx.fillStyle = this.rank.text_color;
+      ctx.fillText(`${this.rank.text}: ${this.rank.data}`, 240, 65);
+    }
 
-    ctx.font = `bold ${this.level.size}px Manrope`;
-    ctx.fillStyle = this.level.text_color;
-    ctx.fillText(`${this.level.text}: ${this.level.data}`, 500, 65);
+    if (this.level.display === true) {
+      ctx.font = `bold ${this.level.size}px Manrope`;
+      ctx.fillStyle = this.level.text_color;
+      ctx.fillText(`${this.level.text}: ${this.level.data}`, 500, 65);
+    }
 
     ctx.beginPath();
     ctx.globalAlpha = 1;
