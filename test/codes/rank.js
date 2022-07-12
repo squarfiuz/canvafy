@@ -10,6 +10,7 @@ module.exports = {
     .setDiscriminator("7777")
     .setStatus("online")
     .setLevel(2)
+    .setRank(3)
     .setCurrentXp(100)
     .setRequiredXp(400)
     .build();

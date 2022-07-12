@@ -137,12 +137,13 @@ opacity | [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Refer
 
 Returns: [Rank](#rank)
 
-<h2 id="set-level">.setLevel(options)</h2>
+<h2 id="set-level">.setLevel(data, [text])</h2>
 <h3>Set the level</h3>
 
-PARAMETER | TYPE | DESCRIPTION
---- | --- | ---
-options | [LevelOptions](https://github.com/squarfiuz/canvafy/tree/main/docs/typedef/LevelOptions.md) | The options for the level
+PARAMETER | TYPE | DESCRIPTION | EXAMPLE
+--- | --- | --- | ---
+data | [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | Level Number | 1
+text | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | Level text | Level
 
 Returns: [Rank](#rank)
 
@@ -155,12 +156,13 @@ options | [LevelColorOptions](https://github.com/squarfiuz/canvafy/tree/main/doc
 
 Returns: [Rank](#rank)
 
-<h2 id="set-rank">.setRank(options)</h2>
+<h2 id="set-rank">.setRank(data, [text])</h2>
 <h3>Set the rank</h3>
 
-PARAMETER | TYPE | DESCRIPTION
---- | --- | ---
-options | [RankOptions](https://github.com/squarfiuz/canvafy/tree/main/docs/typedef/RankOptions.md) | The options for the rank
+PARAMETER | TYPE | DESCRIPTION | EXAMPLE
+--- | --- | --- | ---
+data | [Number](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Number) | Level Number | 1
+text | [String](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String) | Level text | Level
 
 Returns: [Rank](#rank)
 

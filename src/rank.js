@@ -18,6 +18,7 @@ module.exports = class Rank {
     this.discriminator = {
       data: "0000",
       color: "#23272a",
+      display: false,
       size: 35
     };
     this.username = {
@@ -27,7 +28,7 @@ module.exports = class Rank {
     };
     this.level = {
       data: 1,
-      display: true,
+      display: false,
       text: 'Level',
       text_color: "#fff",
       number_color: "#fff",
@@ -35,7 +36,7 @@ module.exports = class Rank {
     };
     this.rank = {
       data: 1,
-      display: true,
+      display: false,
       text: 'Rank',
       text_color: "#fff",
       number_color: "#fff",
@@ -120,14 +121,16 @@ module.exports = class Rank {
     return this;
   }
 
-  setLevel({ data, text = "Level", display = true }) {
+  setLevel(data, text) {
     if (typeof data !== "number") throw new Error("The first argument of setLevel method is not a number.");
-    if (typeof text !== "string") throw new Error("The second argument of setLevel method is not a string.");
-    if (typeof display !== "boolean") throw new Error("The third argument of setLevel method is not a boolean.");
-
     this.level.data = data;
-    this.level.text = text;
-    this.level.display = display;
+
+    if (text) {
+      if (typeof text !== "string") throw new Error("The second argument of setLevel method is not a string.");
+      this.level.text = text;
+    }
+    
+    if (typeof data === "number" || typeof text === "string") this.level.display = true;
 
     return this;
   }
@@ -144,14 +147,16 @@ module.exports = class Rank {
     return this;
   }
 
-  setRank({ data, text = "Rank", display = true }) {
+  setRank(data, text) {
     if (typeof data !== "number") throw new Error("The first argument of setRank method is not a number.");
-    if (typeof text !== "string") throw new Error("The second argument of setRank method is not a string.");
-    if (typeof display !== "boolean") throw new Error("The third argument of setRank method is not a boolean.");
-
     this.rank.data = data;
-    this.rank.text = text;
-    this.rank.display = display;
+
+    if (text) {
+      if (typeof text !== "string") throw new Error("The second argument of setRank method is not a string.");
+      this.rank.text = text;
+    }
+    
+    if (typeof data === "number" || typeof text === "string") this.rank.display = true;
 
     return this;
   }
@@ -201,13 +206,17 @@ module.exports = class Rank {
     return this;
   }
 
-  setDiscriminator(discriminator, color = "#fff") {
-    if (!discriminator || typeof discriminator !== "string") throw new Error("The first argument of setDiscriminator method is not a string.");
-    if (!color || typeof color !== "string") throw new Error("The second argument of setDiscriminator method is not a string.");
-    if (!/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(color)) throw new Error("The second argument of setDiscriminator method is not a hexadecimal color.");
-
+  setDiscriminator(discriminator, color) {
+    if (typeof discriminator !== "string") throw new Error("The first argument of setDiscriminator method is not a string.");
     this.discriminator.data = discriminator.slice(0, 4);
-    this.discriminator.color = color;
+
+    if (color) {
+      if (typeof color !== "string") throw new Error("The second argument of setDiscriminator method is not a string.");
+      if (!/^#([a-fA-F0-9]{6}|[a-fA-F0-9]{3})$/.test(color)) throw new Error("The second argument of setDiscriminator method is not a hexadecimal color.");
+      this.discriminator.color = color;
+    }
+    
+    if (typeof discriminator === "string" || typeof color === "string") this.discriminator.display = true;
 
     return this;
   }
@@ -279,22 +288,25 @@ module.exports = class Rank {
 
     ctx.fillText(username, 240, 125);
 
-    ctx.textAlign = "center";
-    ctx.font = `bold ${this.discriminator.size}px Manrope`;
-    ctx.fillStyle = this.discriminator.color;
-    ctx.fillText(`#${this.discriminator.data}`, ctx.measureText(username).width + 35 + 240, 128);
+    if (this.discriminator.display === true) {
+      ctx.textAlign = "center";
+      ctx.font = `bold ${this.discriminator.size}px Manrope`;
+      ctx.fillStyle = this.discriminator.color;
+      ctx.fillText(`#${this.discriminator.data}`, ctx.measureText(username).width + 35 + 240, 128);
+    }
 
     if (this.rank.display === true) {
-      ctx.textAlign = "start";
+      ctx.textAlign = "end";
       ctx.font = `bold ${this.rank.size}px Manrope`;
       ctx.fillStyle = this.rank.text_color;
-      ctx.fillText(`${this.rank.text}: ${this.rank.data}`, 240, 65);
+      ctx.fillText(`${this.rank.text}: ${this.rank.data}`, this.level.display ? 450 : 710, 65);
     }
 
     if (this.level.display === true) {
+      ctx.textAlign = "end";
       ctx.font = `bold ${this.level.size}px Manrope`;
       ctx.fillStyle = this.level.text_color;
-      ctx.fillText(`${this.level.text}: ${this.level.data}`, 500, 65);
+      ctx.fillText(`${this.level.text}: ${this.level.data}`, 710, 65);
     }
 
     ctx.beginPath();
