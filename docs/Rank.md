@@ -141,7 +141,7 @@ Returns: [Rank](#rank)
 <h3>Set the level</h3>
 
 PARAMETER | TYPE | DESCRIPTION
---- | --- | --- | ---
+--- | --- | ---
 options | [LevelOptions](https://github.com/squarfiuz/canvafy/tree/main/docs/typedef/LevelOptions.md) | The options for the level
 
 Returns: [Rank](#rank)
@@ -150,7 +150,7 @@ Returns: [Rank](#rank)
 <h3>Set the level color</h3>
 
 PARAMETER | TYPE | DESCRIPTION
---- | --- | --- | ---
+--- | --- | ---
 options | [LevelColorOptions](https://github.com/squarfiuz/canvafy/tree/main/docs/typedef/LevelColorOptions.md) | The options for the level color
 
 Returns: [Rank](#rank)
@@ -159,7 +159,7 @@ Returns: [Rank](#rank)
 <h3>Set the rank</h3>
 
 PARAMETER | TYPE | DESCRIPTION
---- | --- | --- | ---
+--- | --- | ---
 options | [RankOptions](https://github.com/squarfiuz/canvafy/tree/main/docs/typedef/RankOptions.md) | The options for the rank
 
 Returns: [Rank](#rank)
@@ -168,7 +168,7 @@ Returns: [Rank](#rank)
 <h3>Set the rank color</h3>
 
 PARAMETER | TYPE | DESCRIPTION
---- | --- | --- | ---
+--- | --- | ---
 options | [RankColorOptions](https://github.com/squarfiuz/canvafy/tree/main/docs/typedef/RankColorOptions.md) | The options for the rank color
 
 Returns: [Rank](#rank)
