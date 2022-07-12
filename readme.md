@@ -44,7 +44,7 @@ client.on("messageCreate", async message => {
     .setUsername(message.author.username)
     .setDiscriminator(message.author.discriminator)
     .setStatus(message.member.presence?.status)
-    .setLevel(1)
+    .setLevel({ data: 1 })
     .setCurrentXp(200)
     .setRequiredXp(400)
     .build();
